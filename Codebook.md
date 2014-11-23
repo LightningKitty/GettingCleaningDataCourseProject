@@ -156,14 +156,20 @@ The process was as follows
 1. Unzip the main file (located in working directory). 
 
 2. Read these files:
+
 	a. In the "UCI HAR Dataset" directory
+	
 		* features.txt - variable names for the "X" files
 		* activity_labels.txt - code/activity mapping for "Y" files
+		
 	b. In the "UCI HAR Dataset/test" directory
+	
 		* subject_test.txt - personal IDs that identify each subject
 		* X_test.txt - observations data
 		* Y_test.txt  - activity data
+		
 	c. In the ""UCI HAR Dataset/train" directory
+	
 		* subject_train.txt - personal IDs that identify each subject
 		* X_train.txt - observations data
 		* Y_train.txt - activity data
@@ -184,17 +190,20 @@ readable.
 
 7. Create three extra columns and cbind them to the front of the filtered
 data set to make an interim data set:
-a. DataSet - a string identifying whether the row came from test or 
-	   training
-b. SubjectID - an integer identifying the subject's ID number (1:30)
-c. Activity - a factor replacing the activity numbers with their names:
 
-	1 WALKING
-	2 WALKING_UPSTAIRS
-	3 WALKING_DOWNSTAIRS
-	4 SITTING
-	5 STANDING
-	6 LAYING
+	a. DataSet - a string identifying whether the row came from test or 
+		   training
+		   
+	b. SubjectID - an integer identifying the subject's ID number (1:30)
+	
+	c. Activity - a factor replacing the activity numbers with their names:
+	
+		1 WALKING
+		2 WALKING_UPSTAIRS
+		3 WALKING_DOWNSTAIRS
+		4 SITTING
+		5 STANDING
+		6 LAYING
 
 8. Convert the interim data set to a table and then generate the mean for each
 subject for each activity for each variable. The mean was chosen as the
@@ -202,12 +211,13 @@ average because the measurements are of continuous variables.
 
 9. Reshape the data table generated in step 8 so that it is a narrow table with
 the columns: 
-a. SubjectID 
-b. Activity 
-c. Variable 
-d. Mean 
-e. SubjectID 
-f. Activity
+
+	a. SubjectID 
+	b. Activity 
+	c. Variable 
+	d. Mean 
+	e. SubjectID 
+	f. Activity
 	
 10. Convert back to a data frame and remove the last two columns.
 
