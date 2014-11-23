@@ -8,11 +8,11 @@ This is the codebook for the [tidy data set](https://github.com/LightningKitty/G
 The original data was collected from accelerometers from the Samsung Galaxy S 
 smartphone. A full description is available here (where the data was obtained):
 
-	http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones 
+[http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones] 
 
 The original data is available at:
 
-	https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+[https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip] 
 
 The following four paragraphs are from the original data set codebook 
 ("features_info.txt") for the data:
@@ -64,7 +64,7 @@ involved.
 ### 66 variables
 
 These 66 variables are derived from columns in the original data set that 
-measured mean (Mean) or standard deviation(StdDeviation).
+measured mean (Mean) or standard deviation (StdDeviation).
 
 * These variables measured the acceleration (Accel) or angular velocity (Gyro)
 of the subject's body (Body) or gravity (Gravity).
