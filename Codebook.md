@@ -209,17 +209,9 @@ data set to make an interim data set:
 subject for each activity for each variable. The mean was chosen as the
 average because the measurements are of continuous variables.
 
-9. Reshape the data table generated in step 8 so that it is a narrow table with
-the columns: 
-
-	a. SubjectID 
-	b. Activity 
-	c. Variable 
-	d. Mean 
-	e. SubjectID 
-	f. Activity
+9. Reshape the data table generated in step 8 so that it is a narrow table.
+Convert back to a data frame and select columns: SubjectID, Activity, Variable, 
+Mean.
 	
-10. Convert back to a data frame and remove the last two columns.
-
-11. Write the data table to the tidydata.txt file.
+10. Write the data table to the tidydata.txt file.
 		
