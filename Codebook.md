@@ -179,7 +179,9 @@ directories into one table of merged data.
 
 4. Identify the variable names that have "mean()" or "std()", which we know from
 the original data set codebook that these are measurements of mean value and
-standard deviation value. 
+standard deviation value. Other variables with "Mean" in the name were excluded
+because they were not measurements on the mean or standard deviation of a 
+measurement.
 
 5. Select the columns from the merged data with the desired variable names to 
 give the filtered data set.
