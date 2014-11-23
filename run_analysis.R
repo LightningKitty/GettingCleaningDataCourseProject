@@ -13,14 +13,26 @@
 run_analysis <- function() {
 
     zipDataFile <- "getdata_projectfiles_UCI HAR Dataset.zip"
+    zipURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+    
+    ## Get the data file if not already present in working directory
+    
+    if (!file.exists(zipDataFile)) {
+           print("Data file not present. Downloading data file.")
+           download.file(zipURL, destfile = zipDataFile)
+    }
     
     ## Unzip the data file "getdata_projectfiles_UCI HAR Dataset.zip"
     ## if not already done.
     
-    if (!file.exists("UCI HAR Dataset")) {
-            if (!file.exists(zipDataFile)) stop("Data file not present")
-            else unzip(zipDataFile)
+    if (file.exists(zipDataFile) && !file.exists("UCI HAR Dataset")) {
+            print("Unpacking data file.")
+            unzip(zipDataFile)
     } 
+    
+    ## If for some reason it didn't unzip (e.g. corrupt file), abort.
+    
+    if (!file.exists("UCI HAR Dataset")) stop("Data was not unpacked successfully.")
     
     ## Read each of the tables in the training and test files into R
     
@@ -98,6 +110,7 @@ run_analysis <- function() {
     setnames(tidySegDT,colnames(tidySegDT),newnames)
     
     ## Sort by subject and activity
+    require(dplyr)
     tidySegDT <- arrange(tidySegDT, SubjectID, Activity)
     
     ## Tidy up columns
