@@ -70,12 +70,14 @@ measured mean (Mean) or standard deviation (StdDeviation).
 of the subject's body (Body) or gravity (Gravity).
 
 * The variables measure either direction (ending in X, Y or Z to signify
-a measurement along that axis) or of magnitude (Mag).
+a measurement along that axis) or magnitude (Mag).
 
 * Some variables measure a derivation over time (Jerk).
 
-* The data set retains the convention of prefixing time variables with 't'
-and frequency variables with 'f'.
+* The data set retains the convention of prefixing time domain variables with 't'
+and frequency domain variables with 'f'. Time domain signals were captured at a
+constant rate of 50 Hz. A Fast Fourier Transform (FFT) was applied to some of 
+these signals to generate the frequency domain variables. 
 
 The mapping of the 66 old variable names to new variable names is:
 
@@ -215,7 +217,7 @@ the matching variable names. Clean these up so they are R-compliant and
 readable. 
 
 7. Create three extra columns and cbind them to the front of the filtered
-data set to make an interim data set:
+data set to make an interim data set. The three extra columns are:
 
 	a. DataSet - a string identifying whether the row came from test or 
 		   training
@@ -237,7 +239,8 @@ average because the measurements are of continuous variables.
 
 9. Reshape the data table generated in step 8 so that it is a narrow table.
 Convert back to a data frame and select columns: SubjectID, Activity, Variable, 
-Mean.
+Mean. It was decided not to keep the DataSet information as the division of 
+the original data into training/test data was only useful for machine learning.
 	
 10. Write the data table to the tidydata.txt file.
 		
